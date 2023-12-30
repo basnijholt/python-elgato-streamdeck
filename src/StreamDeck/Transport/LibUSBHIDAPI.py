@@ -229,6 +229,7 @@ class LibUSBHIDAPI(Transport):
             with self.mutex:
                 if type(path) is not bytes:
                     path = bytes(path, 'utf-8')
+                print(path, "path")
                 handle = self.hidapi.hid_open_path(path)
 
                 if not handle:
